@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Geomini:wght@200..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 :root {
     --text-primary: #ffffff;
     --text-secondary: rgba(255, 255, 255, 0.7);
@@ -11,6 +12,7 @@
     --accent: #2563EB;
     --accent-hover: #1d4ed8;
 }
+
 html{
     scroll-behavior: smooth;
 }
@@ -91,6 +93,7 @@ nav button:hover{
     background-color: var(--accent-hover);
     transform: scale(1.05);
 }
+
 .hamburger{
     display: none;
     flex-direction: column;
@@ -141,9 +144,9 @@ nav button:hover{
     .nav-link{
         position: fixed;
         top: 0;
-        right: -100%;
+        right: 0;
         width: 70%;
-        height: 100vh;
+        height: 100dvh;
         background-color: rgba(0, 0, 0, 0.75);
         backdrop-filter: blur(20px) saturate(180%);
         -webkit-backdrop-filter: blur(20px) saturate(180%);
@@ -151,13 +154,18 @@ nav button:hover{
         justify-content: center;
         align-items: center;
         gap: 40px;
-        transition: right 0.4s ease-in-out;
+        transform: translateX(100%);
+        transition: transform 0.4s ease-in-out;
         z-index: 150;
         margin: 0;
+        visibility: hidden;
+        pointer-events: none;
     }
 
     .nav-link.active{
-        right: 0;
+        transform: translateX(0);
+        visibility: visible;
+        pointer-events: auto;
     }
 
     .nav-link li{
@@ -170,6 +178,7 @@ nav button:hover{
         display: block;
     }
 }
+
 .hero{
     min-height: 90vh;
     display: flex;
@@ -256,6 +265,7 @@ nav button:hover{
         height: 220px;
     }
 }
+
 .btn-hero{
     background-color: var(--accent);
     color: #ffffff;
@@ -268,10 +278,12 @@ nav button:hover{
     transition: all 0.3s ease-in-out;
     margin-top: 20px;
 }
+
 .btn-hero:hover{
     background-color: var(--accent-hover);
     transform: scale(1.05);
 }
+
 .about{
     min-height: 90vh;
     display: flex;
@@ -533,6 +545,7 @@ nav button:hover{
         grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     }
 }
+
 .contact{
     padding: 80px 10%;
     text-align: center;
@@ -680,6 +693,7 @@ nav button:hover{
         padding: 60px 6%;
     }
 }
+
 .footer{
     background-color: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(20px) saturate(180%);
