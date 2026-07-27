@@ -70,18 +70,18 @@ if(contactForm){
     });
 }
 const hamburger = document.getElementById('hamburger');
-const navLinks = document.getElementById('nav-links');
+const mobileMenu = document.getElementById('mobile-menu');
 
-if(hamburger){
+if(hamburger && mobileMenu){
     hamburger.addEventListener('click', function(){
         hamburger.classList.toggle('active');
-        navLinks.classList.toggle('active');
+        mobileMenu.classList.toggle('active');
     });
 
-    document.querySelectorAll('.nav-link a').forEach(link => {
+    document.querySelectorAll('.mobile-menu a').forEach(link => {
         link.addEventListener('click', () => {
             hamburger.classList.remove('active');
-            navLinks.classList.remove('active');
+            mobileMenu.classList.remove('active');
         });
     });
 }
